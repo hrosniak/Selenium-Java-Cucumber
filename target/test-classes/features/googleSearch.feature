@@ -4,13 +4,16 @@ Feature: Coming up for Google page
     Given Google Page is opened
     When I close cookie Frame
     When I search for phrase "<searchPhrase>"
-    Then I can see search results
+    Then I click for first element
+
 
     Examples:
       | searchPhrase                   |
-      | Software Development Academy   |
-      | Selenium Cucumber              |
+      | Faceit                         |
+      | CallOfDuty                     |
       | League Of legends              |
       | Flashscore                     |
+      | Twitter                        |
+
 
 

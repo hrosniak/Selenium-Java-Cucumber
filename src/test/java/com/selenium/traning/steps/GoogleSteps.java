@@ -26,10 +26,12 @@ public class GoogleSteps {
         googlePage.searchInGoogle(searchPhrase);
     }
 
-    @Then("I can see search results")
-    public void iCanSeeSearchResults() {
-        googlePage.verifyIfResultsAreVisible();
+    @Then("I click for first element")
+    public void iClickForFirstElement() {
+        googlePage.iClickInFirstElementAndSeeTheResult();
     }
+
+
 
 
 

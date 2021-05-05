@@ -20,8 +20,12 @@ public class GooglePage extends BasePage {
     @FindBy(how = How.NAME, using = "q")
     WebElement searchField;
 
-    @FindBy(how = How.ID, using = "rcnt")
-    WebElement resultPart;
+
+    @FindBy(how = How.CSS, using =  "#rso > div:nth-child(1) > div > div > div > div > div.yuRUbf > a > h3")
+    WebElement firstResult;
+
+
+
 
     public void openGooglePage() {
         driver.get(GOOGLE_URL);
@@ -38,9 +42,13 @@ public class GooglePage extends BasePage {
         searchField.sendKeys(Keys.ENTER);
     }
 
-    public void verifyIfResultsAreVisible() {
-        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(resultPart));
+
+    public void iClickInFirstElementAndSeeTheResult() {
+        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(firstResult));
+        firstResult.click();
     }
+
+
 
 }
 
