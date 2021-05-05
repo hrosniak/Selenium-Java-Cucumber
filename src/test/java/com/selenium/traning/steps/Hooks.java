@@ -6,7 +6,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
 import java.io.IOException;
-// Definiuje co gdziee i kiedy wykonujemy
+// Definiuje co gdzie i kiedy wykonujemy
 
 public class Hooks {
 

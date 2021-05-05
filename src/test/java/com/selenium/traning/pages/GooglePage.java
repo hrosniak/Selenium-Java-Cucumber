@@ -20,7 +20,6 @@ public class GooglePage extends BasePage {
     @FindBy(how = How.NAME, using = "q")
     WebElement searchField;
 
-
     @FindBy(how = How.CSS, using =  "#rso > div:nth-child(1) > div > div > div > div > div.yuRUbf > a > h3")
     WebElement firstResult;
 

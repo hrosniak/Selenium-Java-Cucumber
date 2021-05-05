@@ -12,8 +12,7 @@ Feature: Coming up for Google page
       | Faceit                         |
       | CallOfDuty                     |
       | League Of legends              |
-      | Flashscore                     |
-      | Twitter                        |
+
 
 
 
