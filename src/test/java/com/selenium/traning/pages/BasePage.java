@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 // W tym miejscu używamy naszego drivera
 public abstract class BasePage {
-    public RemoteWebDriver driver;
+    public final RemoteWebDriver driver;
 
     public BasePage() {
         this.driver = Drivers.DRIVER;

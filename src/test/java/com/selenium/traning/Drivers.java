@@ -49,7 +49,8 @@ public class Drivers {
 
 // Metoda która zamyka drivera
             public static void destroyDriver(){
-                DRIVER.quit();
+
+        DRIVER.quit();
             }
 
 // Wykonujemy screenshota
