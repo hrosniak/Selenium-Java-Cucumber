@@ -21,6 +21,9 @@ public class LoginPage extends BasePage {
     @FindBy(how = How.ID, using = "password-error")
     WebElement errorMessage;
 
+    @FindBy(how = How.ID, using = "email-error")
+    WebElement errorMessageTwo;
+
     @FindBy(how = How.ID, using = "login-button")
     WebElement needHelp;
 
@@ -46,6 +49,16 @@ public class LoginPage extends BasePage {
 
     public void verifyLoginPageIsOpened(){
         new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOf(needHelp));
+    }
+
+    public String getErrorMessage(){
+        return errorMessage.getText();
+    }
+
+    public void authenticate(String email, String password) throws InterruptedException {
+        fillEmailAddressField(email);
+        feelPasswordField(password);
+        clickSignInButton();
     }
 
 }
