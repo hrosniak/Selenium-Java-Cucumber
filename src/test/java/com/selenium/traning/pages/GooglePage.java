@@ -1,6 +1,5 @@
 package com.selenium.traning.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,14 +13,26 @@ public class GooglePage extends BasePage {
 
     private static String GOOGLE_URL = "https://www.google.com/";
 
-    @FindBy(how = How.ID, using = "zV9nZe")
+    @FindBy(how = How.ID, using = "L2AGLb")
     WebElement agreeButton;
 
     @FindBy(how = How.NAME, using = "q")
     WebElement searchField;
 
-    @FindBy(how = How.CSS, using =  "#rso > div:nth-child(1) > div > div > div > div > div.yuRUbf > a > h3")
-    WebElement firstResult;
+    @FindBy(how = How.XPATH, using = "/html/body/div[1]/div[1]/div/div/div/div[2]/a")
+    WebElement loginButton;
+
+    @FindBy(how = How.ID, using = "identifierId")
+    WebElement loginFrame;
+
+    @FindBy(how = How.ID, using = "passwordNext")
+    WebElement next;
+
+    @FindBy(how = How.ID, using = "password")
+    WebElement passwordFrame;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"view_container\"]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[2]/div[2]" )
+    WebElement message;
 
 
 
@@ -32,21 +43,42 @@ public class GooglePage extends BasePage {
     }
 
     public void closeFrame() {
-        driver.findElement(By.id("zV9nZe"));
         agreeButton.click();
     }
 
-    public void searchInGoogle(String searchPhrase){
-        searchField.sendKeys(searchPhrase);
-        searchField.sendKeys(Keys.ENTER);
+    public void openLoginPage(){
+        loginButton.click();
     }
 
-
-    public void iClickInFirstElementAndSeeTheResult() {
-        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(firstResult));
-        firstResult.click();
+    public void iClickAndSetLoginForGoogleAccount(String emailAddress){
+        loginFrame.clear();
+        loginFrame.sendKeys(emailAddress);
+        loginFrame.sendKeys(Keys.ENTER);
     }
 
+    public void iClickAndSetPasswordForGoogleAccount(String password) {
+        passwordFrame.clear();
+        passwordFrame.sendKeys(password);
+    }
+
+    public void iClickNextButton() throws InterruptedException {
+        Thread.sleep(1000);
+        next.click();
+    }
+
+    public Boolean errorMessage(){
+        return message.isDisplayed();
+    }
+
+    public String getErrorMessage(){
+        return message.getText();
+    }
+
+    public void authenticate(String email, String password) throws InterruptedException{
+        iClickAndSetLoginForGoogleAccount(email);
+        iClickAndSetPasswordForGoogleAccount(password);
+        iClickNextButton();
+    }
 
 
 }

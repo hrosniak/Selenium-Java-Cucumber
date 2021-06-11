@@ -5,7 +5,6 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -34,10 +33,6 @@ public class Drivers {
             case "firefox":
                 System.setProperty("webdriver.gecko.driver", "C:\\Users\\huber\\Desktop\\Testy, programy itp\\Selenium\\drivers\\geckodriver.exe");
                 DRIVER = new FirefoxDriver();
-                break;
-            case "edge":
-                System.setProperty("webdriver.msedge.driver", "C:\\Users\\huber\\Desktop\\Testy, programy itp\\Selenium\\drivers\\msedgedriver.exe");
-                DRIVER = new EdgeDriver();
                 break;
             default:
                 throw new IllegalStateException("Unsupported driver - cannot start browser");

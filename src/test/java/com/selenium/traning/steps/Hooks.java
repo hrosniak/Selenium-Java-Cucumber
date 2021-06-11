@@ -1,4 +1,4 @@
-package com.selenium.traning.steps;
+package LoginToAccountsGoogle;
 
 import com.selenium.traning.Drivers;
 import io.cucumber.java.After;
