@@ -1,26 +1,12 @@
-Feature: Sign in to Gamivo
+Feature: Choose product from Gamivo
 
-  Background:
+  Scenario:
     Given Home page is opened
-    When I open login page and close notifications
-    Then I click login button and login page is opened
-
-
-  Scenario Outline: Authentication - incorrect value
-    And I fill email address field "<emailAddress>"
-    And I fill password field "<password>"
-    Then I click Sign button
-
-    Examples:
-      |emailAddress             |password        |
-      |                         |                 |
-      |HubertTest123@gmail.com  |password         |
-      |huberttest123@gmail.com  |HubertTest21     |
-      |test_test.pl             |test             |
-
-  Scenario: Authentication - positive
-    When I authenticate using credentials
-      |emailAdress            |   password       |
-      |huberttest123@gmail.com|HubertTest22      |
-
-    Then I can see My Account Page
+    When I choose seventh product from popular
+    And I going to product page
+    And I choose first offer from list and add product to cart
+    And I choose price without SMART service
+    And I switch to cart
+    And I increase number of products to three
+    And Add random coupon
+    Then I see error message of coupon
