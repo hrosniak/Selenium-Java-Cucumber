@@ -50,11 +50,11 @@ public class Steps {
     @And("I increase number of products to three")
     public void iIncreaseNumberOfProductsToThree() throws InterruptedException{
         homePage.addToThree();
-        Thread.sleep(5000);
+        Thread.sleep(1000);
     }
 
     @And("Add random coupon")
-    public void addRandomCoupon() throws InterruptedException {
+    public void addRandomCoupon() {
         homePage.addCoupon();
         homePage.applyCouponButton();
     }

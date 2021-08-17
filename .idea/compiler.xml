@@ -10,6 +10,7 @@
         <module name="LoginToAccountsGoogle" />
         <module name="Selenium" />
         <module name="LoginTooAccountsGooogle" />
+        <module name="GamivoZadanie" />
       </profile>
     </annotationProcessing>
   </component>

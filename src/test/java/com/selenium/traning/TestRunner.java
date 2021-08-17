@@ -1,4 +1,4 @@
-package com.selenium.traning;
+package LoginToAccountsGoogle;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

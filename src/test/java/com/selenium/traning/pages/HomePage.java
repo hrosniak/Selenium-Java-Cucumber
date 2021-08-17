@@ -32,7 +32,7 @@ public class HomePage extends BasePage{
     @FindBy(how = How.XPATH, using = "/html/body/app-root/div/app-header/div/div[1]/div[2]/div[2]/div/div/app-cart/div/div[1]/a")
     WebElement goToCart;
 
-    @FindBy(how = How.CLASS_NAME, using = "cart-icon")
+    @FindBy(how = How.XPATH, using = "/html/body/app-root/div/app-header/div/div[1]/div[2]/div[2]/div/div/app-cart/div/div[2]/table/tr[2]/td[1]/a")
     WebElement goToCartTwo;
 
     @FindBy(how = How.XPATH, using = "//html/body/app-root/div/div/ng-component/div/div/div[2]/div[1]/div/div/table/tbody/tr[1]/td[5]/div/button[2]/i")
@@ -98,10 +98,10 @@ public class HomePage extends BasePage{
         Thread.sleep(1000);
     }
 
-    public void addCoupon() throws InterruptedException {
+    public void addCoupon()  {
         coupon.click();
         addCoupon.sendKeys("BASKET-SMART");
-        Thread.sleep(1000);
+
 
     }
 
